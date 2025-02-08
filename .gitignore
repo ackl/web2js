@@ -22,6 +22,9 @@ spec/*.o
 tex_files/*.json
 tex_files/*.dvi
 tex_files/*.pdf
+tikz_libs/*.json
+tikz_libs/*.dvi
+tikz_libs/*.pdf
 initex-files.json
 parser.js
 core.dump
