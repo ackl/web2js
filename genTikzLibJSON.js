@@ -4,7 +4,8 @@ const path = require('path');
 const fs = require('fs');
 const spawnSync = require('child_process').spawnSync;
 
-const basePath = '/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries';
+const basePath = '/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries';
+const pgfcontribPath = '/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfcontrib/';
 
 fs.mkdirSync('tikz_libs', { recursive: true });
 
@@ -30,8 +31,10 @@ const processDir = (dir) => {
                 spawnSync('node', ['tex.js', texFile, 'y']).stdout.toString()
             );
             console.log(`TeX output saved to tikz_libs/${tikzLibName}.output.log`);
+
         }
     }
 };
 
 processDir(basePath);
+processDir(pgfcontribPath);
